@@ -8,22 +8,14 @@ module tb_half_adder;
   initial begin
     $dumpfile("dump.vcd");
     $dumpvars(1);
+    
+    $monitor("A = %b B = %b | S =%b C=%b", A,B,S,C);
 
     A=0; B=0; #1;
-    $display("A = %b B = %b | S =%b C=%b", A,B,S,C);
-
     A=0; B=1; #1;
-    $display("A = %b B = %b | S =%b C=%b", A,B,S,C);
-
-
     A=1; B=0; #1;
-    $display("A = %b B = %b | S =%b C=%b", A,B,S,C);
-
     A=1; B=1; #1;
-    $display("A = %b B = %b | S =%b C=%b", A,B,S,C);
-
     $finish;
   end
 
 endmodule
-
